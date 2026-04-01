@@ -1,0 +1,116 @@
+# Remedy Color Palette Reference
+
+Color values and their derivation from the upstream Remedy theme source.
+
+## Base16 Eighties Palette
+
+These are the raw input colors shared across all variants.
+
+### Normal (muted)
+
+| Name | Hex | Usage |
+|---|---|---|
+| Black | `#282A2E` | Terminal ANSI black |
+| Red | `#A54242` | Errors, diagnostics |
+| Green | `#8C9440` | Success, bright strings |
+| Yellow | `#DE935F` | Primitives, numbers, tags |
+| Blue | `#5F819D` | Info, bright functions |
+| Magenta | `#85678F` | Bright keywords, renamed |
+| Cyan | `#5E8D87` | Preprocessor, links |
+| White | `#707880` | Escape sequences, hints |
+| Orange | `#EB684B` | Signature accent color |
+
+### Bright (vibrant)
+
+| Name | Hex | Usage |
+|---|---|---|
+| Black | `#373B41` | — |
+| Red | `#CC6666` | Types, constants, deleted |
+| Green | `#B5BD68` | Strings, created |
+| Yellow | `#F0C674` | Classes, namespaces, conflict |
+| Blue | `#81A2BE` | Functions, modified |
+| Magenta | `#B294BB` | Keywords/storage |
+| Cyan | `#8ABEB7` | Regex |
+| White | `#C5C8C6` | Bold/italic markdown |
+
+## Dark Variant
+
+Bright palette colors are used for syntax; normal palette for status/diagnostics.
+
+| Role | Value | Derivation |
+|---|---|---|
+| Base (panel bg) | `#352B2A` | Remedy dark base |
+| Editor bg | `#3F3433` | `base.lighten(0.2).desaturate(0.1)` |
+| Foreground | `#F7E0B4` | `Color('#F0C674').lighten(0.2)` |
+| Comments | `#7C705A` | `foreground.darken(0.5).desaturate(0.8)` |
+| Muted text | `#6A5C41` | `base.mix(foreground, 0.3)` |
+| Disabled | `#635A48` | `foreground.darken(0.6).desaturate(0.8)` |
+| Border | `#2A2222` | `base.darken(0.2)` |
+| Hover bg | `#52463F` | `base.mix(foreground, 0.15)` |
+| Shadow | `#1A1615` | `base.darken(0.5)` |
+| Readonly | `#BAA887` | Semantic token (VS Code output) |
+| Button fg | `#0B0908` | Near-black contrast text |
+
+## Bright Variant
+
+Normal palette colors are used for syntax; dark variant uses bright palette.
+
+| Role | Value | Derivation |
+|---|---|---|
+| Base (panel bg) | `#FCEED1` | Remedy bright base (warm cream) |
+| Editor bg | `#FEF8EB` | `base.lighten(0.06)` |
+| Foreground | `#563D0E` | `Color('#F0C674').darken(0.3).desaturate(0.1).darken(0.6)` |
+| Comments | `#AF9054` | `foreground.lighten(1.6).desaturate(0.5)` |
+| Muted text | `#6B552A` | `base.mix(foreground, 0.3)` |
+| Disabled | `#AF9054` | Same as comments |
+| Border | `#E4C88D` | `base.darken(0.2).desaturate(0.3)` |
+| Hover bg | `#CAB996` | `base.mix(foreground, 0.3)` |
+| Shadow | `#AF9054` | Same as comments |
+| Modified yellow | `#D79A22` | `Color('#F0C674').darken(0.3).desaturate(0.1)` — replaces bright.yellow for classes |
+| Readonly | `#836731` | Semantic token (VS Code output) |
+| Button fg | `#FCEED1` | Base color as contrast text |
+
+## Syntax Mapping
+
+Dark uses bright palette for syntax; bright uses normal palette (with exceptions).
+
+| Semantic Role | Dark | Bright | Tree-sitter keys |
+|---|---|---|---|
+| Keywords | `#B294BB` | `#85678F` | `keyword.*` |
+| Functions | `#81A2BE` | `#5F819D` | `function.*` |
+| Strings | `#B5BD68` | `#8C9440` | `string.*` |
+| Classes | `#F0C674` | `#D79A22` | `constructor`, `module`, `namespace` |
+| Types | `#CC6666` | `#CC6666` | `type.*`, `constant`, `property` |
+| Primitives | `#DE935F` | `#DE935F` | `number`, `boolean`, `tag` |
+| Preprocessor | `#5E8D87` | `#5E8D87` | `keyword.directive`, `label` |
+| Regex | `#8ABEB7` | `#8ABEB7` | `string.regex` |
+| Escapes | `#707880` | `#707880` | `string.escape` |
+
+## Terminal ANSI Colors
+
+Normal and bright ANSI colors are the raw palette values above. Dim colors are computed by darkening normal colors by 30%:
+
+| Color | Normal | Bright | Dim |
+|---|---|---|---|
+| Black | `#282A2E` | `#535961` | `#1C1D20` |
+| Red | `#A54242` | `#CC6666` | `#742E2E` |
+| Green | `#8C9440` | `#B5BD68` | `#62682D` |
+| Yellow | `#DE935F` | `#F0C674` | `#B86226` |
+| Blue | `#5F819D` | `#81A2BE` | `#435A6E` |
+| Magenta | `#85678F` | `#B294BB` | `#5D4864` |
+| Cyan | `#5E8D87` | `#8ABEB7` | `#42635F` |
+| White | `#707880` | `#EEEFEE` | `#4E545A` |
+
+Note: Terminal bright black (`#535961`) and bright white (`#EEEFEE`) differ from the raw palette values — these are the VS Code build output values.
+
+## Tilted Variant Italic Scopes
+
+The "Tilted" variants add `font_style: "italic"` to:
+
+- All `keyword.*` entries
+- All `string.*` entries (except `string.escape`)
+- `comment`, `comment.doc`, `comment.documentation` (and colored comment variants)
+- `tag.attribute`, `attribute`
+- `keyword.directive`, `keyword.directive.define`
+- `variable.parameter`, `parameter`
+- `tag.doctype`
