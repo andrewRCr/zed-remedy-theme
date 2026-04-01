@@ -1,0 +1,44 @@
+{
+  "$schema": "https://example.com/schema.json",
+  "name": "Remedy Theme",
+  "version": "0.1.0",
+  "description": "A warm, comfortable color scheme with orange accents",
+  "author": {
+    "name": "Robert Rossmann",
+    "url": "https://github.com/robertrossmann"
+  },
+  "config": {
+    "maxRetries": 3,
+    "timeout": 30000,
+    "debug": false,
+    "ratio": 1.618,
+    "tags": ["theme", "editor", "color-scheme"],
+    "nested": {
+      "deeply": {
+        "value": null
+      }
+    }
+  },
+  "colors": {
+    "accent": "#EB684B",
+    "background": "#352B2A",
+    "foreground": "#F7E0B4",
+    "error": "#A54242",
+    "warning": "#DE935F",
+    "success": "#8C9440"
+  },
+  "features": [
+    {
+      "id": 1,
+      "name": "Cross-language consistency",
+      "enabled": true,
+      "priority": "high"
+    },
+    {
+      "id": 2,
+      "name": "Operator Mono support",
+      "enabled": true,
+      "priority": "medium"
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--
+  Theme test: HTML + inline CSS/JS
+
+  Covers: tags, attributes, classes, IDs, entities,
+  inline styles, script blocks, template syntax.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Remedy Theme Preview</title>
+
+  <style>
+    :root {
+      --bg-base: #352B2A;
+      --fg-primary: #F7E0B4;
+      --accent: #EB684B;
+      --accent-hover: #F19783;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: var(--bg-base);
+      color: var(--fg-primary);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+      margin-bottom: 0.5em;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.25em 0.75em;
+      border-radius: 9999px;
+      background-color: var(--accent);
+      color: var(--bg-base);
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body { background-color: #1a1b26; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="app">
+    <header>
+      <h1>Remedy <span class="badge">Theme</span></h1>
+      <p>A warm, comfortable color scheme with <strong>orange accents</strong>.</p>
+    </header>
+
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#variants">Variants</a></li>
+        <li><a href="https://github.com/robertrossmann/vscode-remedy">Source</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="features">
+        <h2>Features</h2>
+        <ul>
+          <li>Cross-language color consistency</li>
+          <li>Warm &amp; comfortable palette</li>
+          <li>Signature orange accent: <code>#EB684B</code></li>
+        </ul>
+      </section>
+
+      <section id="variants">
+        <h2>Variants</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Appearance</th>
+              <th>Italics</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Remedy Dark</td>
+              <td>Dark</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Remedy Dark Tilted</td>
+              <td>Dark</td>
+              <td>Yes</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Data attributes and boolean attributes -->
+      <button
+        type="submit"
+        class="btn btn-primary"
+        data-action="save"
+        data-tooltip="Save changes"
+        disabled
+        aria-busy="true"
+      >
+        Save &rarr;
+      </button>
+
+      <img
+        src="/images/preview.png"
+        alt="Theme preview screenshot"
+        width="800"
+        height="450"
+        loading="lazy"
+      />
+
+      <!-- Template / slot pattern -->
+      <template id="card-template">
+        <div class="card">
+          <slot name="title">Default Title</slot>
+          <slot name="body">Default content goes here.</slot>
+        </div>
+      </template>
+    </main>
+  </div>
+
+  <script>
+    // Inline JS for testing script block highlighting
+    const app = document.getElementById('app');
+    const cards = document.querySelectorAll('.card');
+
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log(`Loaded ${cards.length} cards`);
+
+      for (const card of cards) {
+        card.addEventListener('click', (event) => {
+          event.preventDefault();
+          card.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
