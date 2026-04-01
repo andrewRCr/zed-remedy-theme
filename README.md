@@ -6,11 +6,11 @@ Remedy is a warm, comfortable color scheme with orange as its signature accent c
 
 ## Variants
 
-| Variant | Description |
-|---|---|
-| **Remedy Dark** | Dark background, no italics |
-| **Remedy Dark Tilted** | Dark background, italicized keywords, strings, and comments |
-| **Remedy Bright** | Light background, no italics |
+| Variant                  | Description                                                  |
+| ------------------------ | ------------------------------------------------------------ |
+| **Remedy Dark**          | Dark background, no italics                                  |
+| **Remedy Dark Tilted**   | Dark background, italicized keywords, strings, and comments  |
+| **Remedy Bright**        | Light background, no italics                                 |
 | **Remedy Bright Tilted** | Light background, italicized keywords, strings, and comments |
 
 The "Tilted" variants are designed to complement fonts with distinct italic faces, such as Operator Mono.
