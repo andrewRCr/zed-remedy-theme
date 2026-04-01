@@ -1,16 +1,17 @@
 {
   "name": "remedy-theme-zed",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Dev scripts for the Remedy Zed theme extension",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "validate": "node scripts/validate-theme.mjs",
+    "compute": "node scripts/compute-colors.mjs"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "author": "Andrew Creekmore <andrew.creekmore@me.com>",
+  "license": "BSD-3-Clause",
   "dependencies": {
+    "ajv": "^8.18.0",
     "color": "^5.0.3"
   }
 }
