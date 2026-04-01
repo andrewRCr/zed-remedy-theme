@@ -8,7 +8,6 @@
       "appearance": "dark",
       "style": {
         "background": "#352B2A",
-        "foreground": "#F7E0B4",
         "text": "#F7E0B4",
         "text.muted": "#6A5C41",
         "text.placeholder": "#6A5C41",
@@ -268,7 +267,6 @@
       "appearance": "dark",
       "style": {
         "background": "#352B2A",
-        "foreground": "#F7E0B4",
         "text": "#F7E0B4",
         "text.muted": "#6A5C41",
         "text.placeholder": "#6A5C41",
@@ -528,7 +526,6 @@
       "appearance": "light",
       "style": {
         "background": "#FCEED1",
-        "foreground": "#563D0E",
         "text": "#563D0E",
         "text.muted": "#6B552A",
         "text.placeholder": "#6B552A",
@@ -788,7 +785,6 @@
       "appearance": "light",
       "style": {
         "background": "#FCEED1",
-        "foreground": "#563D0E",
         "text": "#563D0E",
         "text.muted": "#6B552A",
         "text.placeholder": "#6B552A",
