@@ -103,14 +103,8 @@ Normal and bright ANSI colors are the raw palette values above. Dim colors are c
 
 Note: Terminal bright black (`#535961`) and bright white (`#EEEFEE`) differ from the raw palette values — these are the VS Code build output values.
 
-## Tilted Variant Italic Scopes
+## Blurred & Transparent Variants
 
-The "Tilted" variants add `font_style: "italic"` to:
+The blurred and transparent variants use `background.appearance` set to `"blurred"` or `"transparent"` respectively, with fully transparent (`#00000000`) internal surfaces (editor, panel, terminal, tabs, toolbar, gutter) so the OS compositor effect shows through. Only the window-level `background` and `surface.background` carry opacity (~85% / `D7` and ~82% / `D0`), matching the approach used by Catppuccin Blur.
 
-- All `keyword.*` entries
-- All `string.*` entries (except `string.escape`)
-- `comment`, `comment.doc`, `comment.documentation` (and colored comment variants)
-- `tag.attribute`, `attribute`
-- `keyword.directive`, `keyword.directive.define`
-- `variable.parameter`, `parameter`
-- `tag.doctype`
+Elevated surfaces (popups, menus) remain fully opaque for readability.

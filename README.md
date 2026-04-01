@@ -6,14 +6,51 @@ Remedy is a warm, comfortable color scheme with orange as its signature accent c
 
 ## Variants
 
-| Variant                  | Description                                                  |
-| ------------------------ | ------------------------------------------------------------ |
-| **Remedy Dark**          | Dark background, no italics                                  |
-| **Remedy Dark Tilted**   | Dark background, italicized keywords, strings, and comments  |
-| **Remedy Bright**        | Light background, no italics                                 |
-| **Remedy Bright Tilted** | Light background, italicized keywords, strings, and comments |
+| Variant                      | Description                                          |
+| ---------------------------- | ---------------------------------------------------- |
+| **Remedy Dark**              | Dark background, opaque                              |
+| **Remedy Dark Blurred**      | Dark background with frosted glass blur effect       |
+| **Remedy Dark Transparent**  | Dark background with transparency (no blur)          |
+| **Remedy Bright**            | Light background, opaque                             |
+| **Remedy Bright Blurred**    | Light background with frosted glass blur effect      |
+| **Remedy Bright Transparent**| Light background with transparency (no blur)         |
 
-The "Tilted" variants are designed to complement fonts with distinct italic faces, such as Operator Mono.
+The blurred and transparent variants use the OS compositor for their effects. Blur works best on macOS; on Windows, the effect is applied via Acrylic (Win10 1809+) or Mica (Win11).
+
+## Italic / "Tilted" Mode
+
+The original Remedy theme for VS Code includes "Tilted" variants with italicized keywords, strings, and comments — designed for fonts like Operator Mono. In Zed, you can enable this on any variant via your settings:
+
+```json
+{
+  "experimental.theme_overrides": {
+    "syntax": {
+      "comment": { "font_style": "italic" },
+      "comment.doc": { "font_style": "italic" },
+      "keyword": { "font_style": "italic" },
+      "keyword.function": { "font_style": "italic" },
+      "keyword.return": { "font_style": "italic" },
+      "keyword.conditional": { "font_style": "italic" },
+      "keyword.repeat": { "font_style": "italic" },
+      "keyword.operator": { "font_style": "italic" },
+      "keyword.import": { "font_style": "italic" },
+      "keyword.export": { "font_style": "italic" },
+      "keyword.modifier": { "font_style": "italic" },
+      "keyword.type": { "font_style": "italic" },
+      "keyword.exception": { "font_style": "italic" },
+      "keyword.directive": { "font_style": "italic" },
+      "string": { "font_style": "italic" },
+      "string.doc": { "font_style": "italic" },
+      "string.regex": { "font_style": "italic" },
+      "string.special": { "font_style": "italic" },
+      "attribute": { "font_style": "italic" },
+      "tag.attribute": { "font_style": "italic" },
+      "variable.parameter": { "font_style": "italic" },
+      "parameter": { "font_style": "italic" }
+    }
+  }
+}
+```
 
 ## Installation
 
