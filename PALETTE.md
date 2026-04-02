@@ -43,7 +43,8 @@ Bright palette colors are used for syntax; normal palette for status/diagnostics
 | Editor bg       | `#3F3433` | `base.lighten(0.2).desaturate(0.1)`      |
 | Foreground      | `#F7E0B4` | `Color('#F0C674').lighten(0.2)`          |
 | Comments        | `#7C705A` | `foreground.darken(0.5).desaturate(0.8)` |
-| Muted text      | `#6A5C41` | `base.mix(foreground, 0.3)`              |
+| Muted text      | `#BAA887` | `foreground.darken(0.2).desaturate(0.3)` |
+| Line number     | `#6A5C41` | `base.mix(foreground, 0.3)`              |
 | Disabled        | `#635A48` | `foreground.darken(0.6).desaturate(0.8)` |
 | Border          | `#2A2222` | `base.darken(0.2)`                       |
 | Hover bg        | `#52463F` | `base.mix(foreground, 0.15)`             |
@@ -85,6 +86,8 @@ Dark uses bright palette for syntax; bright uses normal palette (with exceptions
 | Preprocessor  | `#5E8D87` | `#5E8D87` | `keyword.directive`, `label`         |
 | Regex         | `#8ABEB7` | `#8ABEB7` | `string.regex`                       |
 | Escapes       | `#707880` | `#707880` | `string.escape`                      |
+| Bold/italic   | `#C5C8C6` | `#C5C8C6` | `emphasis`, `emphasis.strong`        |
+| Strikethrough | `#7C705A` | `#AF9054` | `strikethrough`                      |
 
 ## Terminal ANSI Colors
 
@@ -108,3 +111,14 @@ Note: Terminal bright black (`#535961`) and bright white (`#EEEFEE`) differ from
 The blurred and transparent variants use `background.appearance` set to `"blurred"` or `"transparent"` respectively, with fully transparent (`#00000000`) internal surfaces (editor, panel, terminal, tabs, toolbar, gutter) so the OS compositor effect shows through. Only the window-level `background` and `surface.background` carry opacity (~85% / `D7` and ~82% / `D0`), matching the approach used by Catppuccin Blur.
 
 Elevated surfaces (popups, menus) remain fully opaque for readability.
+
+## Deviations from Upstream
+
+Intentional departures from the VS Code Remedy v5.28.0 build output, with rationale.
+
+| What                           | Upstream  | Ours           | Why                                                                                                                                                                                                          |
+| ------------------------------ | --------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Dark `text.muted`              | `#6A5C41` | `#BAA887`      | Upstream value was too close to `hidden`/`ignored` (`#635A48`), making tracked files hard to distinguish from hidden ones in the file tree. Brightened to the `readonly` value for clear separation.         |
+| `emphasis` / `emphasis.strong` | —         | `#C5C8C6`      | VS Code Remedy styles `markup.bold`/`markup.italic` via TextMate scopes that have no direct Zed equivalent. Mapped to `emphasis`/`emphasis.strong` tree-sitter captures using the same color (bright white). |
+| `strikethrough`                | —         | comments color | Not present in VS Code Remedy (Zed-specific token). Uses the variant's comments color for a de-emphasized look.                                                                                              |
+| Blurred / transparent variants | —         | see above      | Zed-only feature with no VS Code equivalent.                                                                                                                                                                 |

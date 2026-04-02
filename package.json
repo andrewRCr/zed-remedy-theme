@@ -5,6 +5,7 @@
   "description": "Dev scripts for the Remedy Zed theme extension",
   "type": "module",
   "scripts": {
+    "build": "node scripts/build-theme.mjs",
     "validate": "node scripts/validate-theme.mjs",
     "compute": "node scripts/compute-colors.mjs"
   },
