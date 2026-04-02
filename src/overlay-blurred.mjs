@@ -15,7 +15,9 @@ export function blurredOverlay(t) {
     "surface.background":    `${t.base}D0`,
     "element.selected":      `${t.accent}4D`,
 
-    "panel.background":      "#00000000",
+    "panel.background":          "#00000000",
+    "panel.overlay_background":  `${t.base}D7`,
+    "panel.overlay_hover":       `${t.foreground}11`,
     "tab_bar.background":    "#00000000",
     "tab.active_background": "#00000000",
     "tab.inactive_background": "#00000000",

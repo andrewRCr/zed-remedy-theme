@@ -941,7 +941,9 @@
         "terminal.ansi.dim_blue": "#435A6E",
         "terminal.ansi.dim_magenta": "#5D4864",
         "terminal.ansi.dim_cyan": "#42635F",
-        "terminal.ansi.dim_white": "#4E545A"
+        "terminal.ansi.dim_white": "#4E545A",
+        "panel.overlay_background": "#352B2AD7",
+        "panel.overlay_hover": "#F7E0B411"
       }
     },
     {
@@ -1412,7 +1414,9 @@
         "terminal.ansi.dim_blue": "#435A6E",
         "terminal.ansi.dim_magenta": "#5D4864",
         "terminal.ansi.dim_cyan": "#42635F",
-        "terminal.ansi.dim_white": "#4E545A"
+        "terminal.ansi.dim_white": "#4E545A",
+        "panel.overlay_background": "#352B2AD7",
+        "panel.overlay_hover": "#F7E0B411"
       }
     },
     {
@@ -2353,7 +2357,9 @@
         "terminal.ansi.dim_blue": "#435A6E",
         "terminal.ansi.dim_magenta": "#5D4864",
         "terminal.ansi.dim_cyan": "#42635F",
-        "terminal.ansi.dim_white": "#4E545A"
+        "terminal.ansi.dim_white": "#4E545A",
+        "panel.overlay_background": "#FCEED1D7",
+        "panel.overlay_hover": "#563D0E11"
       }
     },
     {
@@ -2824,7 +2830,9 @@
         "terminal.ansi.dim_blue": "#435A6E",
         "terminal.ansi.dim_magenta": "#5D4864",
         "terminal.ansi.dim_cyan": "#42635F",
-        "terminal.ansi.dim_white": "#4E545A"
+        "terminal.ansi.dim_white": "#4E545A",
+        "panel.overlay_background": "#FCEED1D7",
+        "panel.overlay_hover": "#563D0E11"
       }
     }
   ]
