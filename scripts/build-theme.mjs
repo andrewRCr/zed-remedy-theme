@@ -123,12 +123,12 @@ const output = {
   name: "Remedy",
   author: "Andrew Creekmore (original theme by Robert Rossmann)",
   themes: [
-    { name: "Remedy Dark",              appearance: "dark",  style: darkOpaqueStyle },
-    { name: "Remedy Dark Blurred",      appearance: "dark",  style: darkBlurredStyle },
-    { name: "Remedy Dark Transparent",  appearance: "dark",  style: darkTransparentStyle },
-    { name: "Remedy Bright",            appearance: "light", style: brightOpaqueStyle },
-    { name: "Remedy Bright Blurred",    appearance: "light", style: brightBlurredStyle },
-    { name: "Remedy Bright Transparent", appearance: "light", style: brightTransparentStyle },
+    { name: "Remedy Dark",                appearance: "dark",  style: darkOpaqueStyle },
+    { name: "Remedy Dark (blur)",          appearance: "dark",  style: darkBlurredStyle },
+    { name: "Remedy Dark (transparent)",   appearance: "dark",  style: darkTransparentStyle },
+    { name: "Remedy Bright",               appearance: "light", style: brightOpaqueStyle },
+    { name: "Remedy Bright (blur)",        appearance: "light", style: brightBlurredStyle },
+    { name: "Remedy Bright (transparent)", appearance: "light", style: brightTransparentStyle },
   ],
 };
 

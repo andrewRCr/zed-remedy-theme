@@ -474,7 +474,7 @@
       }
     },
     {
-      "name": "Remedy Dark Blurred",
+      "name": "Remedy Dark (blur)",
       "appearance": "dark",
       "style": {
         "background.appearance": "blurred",
@@ -947,7 +947,7 @@
       }
     },
     {
-      "name": "Remedy Dark Transparent",
+      "name": "Remedy Dark (transparent)",
       "appearance": "dark",
       "style": {
         "background.appearance": "transparent",
@@ -1890,7 +1890,7 @@
       }
     },
     {
-      "name": "Remedy Bright Blurred",
+      "name": "Remedy Bright (blur)",
       "appearance": "light",
       "style": {
         "background.appearance": "blurred",
@@ -2363,7 +2363,7 @@
       }
     },
     {
-      "name": "Remedy Bright Transparent",
+      "name": "Remedy Bright (transparent)",
       "appearance": "light",
       "style": {
         "background.appearance": "transparent",

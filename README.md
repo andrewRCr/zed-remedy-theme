@@ -9,14 +9,14 @@ and a cohesive UI.
 
 ## Variants
 
-| Variant                      | Description                                          |
-| ---------------------------- | ---------------------------------------------------- |
-| **Remedy Dark**              | Dark background, opaque                              |
-| **Remedy Dark Blurred**      | Dark background with frosted glass blur effect       |
-| **Remedy Dark Transparent**  | Dark background with transparency (no blur)          |
-| **Remedy Bright**            | Light background, opaque                             |
-| **Remedy Bright Blurred**    | Light background with frosted glass blur effect      |
-| **Remedy Bright Transparent**| Light background with transparency (no blur)         |
+| Variant                          | Description                                     |
+| -------------------------------- | ----------------------------------------------- |
+| **Remedy Dark**                  | Dark background, opaque                         |
+| **Remedy Dark (blur)**           | Dark background with frosted glass blur effect  |
+| **Remedy Dark (transparent)**    | Dark background with transparency (no blur)     |
+| **Remedy Bright**                | Light background, opaque                        |
+| **Remedy Bright (blur)**         | Light background with frosted glass blur effect |
+| **Remedy Bright (transparent)**  | Light background with transparency (no blur)    |
 
 The blurred and transparent variants use the OS compositor for their effects.
 Blur works best on macOS; on Windows, the effect is applied via Acrylic
