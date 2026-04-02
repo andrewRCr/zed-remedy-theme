@@ -1,8 +1,11 @@
 # Remedy Theme for Zed
 
-A port of the [Remedy](https://github.com/robertrossmann/vscode-remedy) color scheme for the [Zed](https://zed.dev) editor.
+A port of the [Remedy](https://github.com/robertrossmann/vscode-remedy) color scheme
+for the [Zed](https://zed.dev) editor.
 
-Remedy is a warm, comfortable color scheme with orange as its signature accent color, rooted in the Base16 Eighties palette. It emphasizes cross-language color consistency and a cohesive UI.
+Remedy is a warm, comfortable color scheme with orange as its signature accent color,
+rooted in the Base16 Eighties palette. It emphasizes cross-language color consistency
+and a cohesive UI.
 
 ## Variants
 
@@ -15,11 +18,15 @@ Remedy is a warm, comfortable color scheme with orange as its signature accent c
 | **Remedy Bright Blurred**    | Light background with frosted glass blur effect      |
 | **Remedy Bright Transparent**| Light background with transparency (no blur)         |
 
-The blurred and transparent variants use the OS compositor for their effects. Blur works best on macOS; on Windows, the effect is applied via Acrylic (Win10 1809+) or Mica (Win11).
+The blurred and transparent variants use the OS compositor for their effects.
+Blur works best on macOS; on Windows, the effect is applied via Acrylic
+(Win10 1809+) or Mica (Win11).
 
 ## Italic / "Tilted" Mode
 
-The original Remedy theme for VS Code includes "Tilted" variants with italicized keywords, strings, and comments — designed for fonts like Operator Mono. In Zed, you can enable this on any variant via your settings:
+The original Remedy theme for VS Code includes "Tilted" variants with italicized
+keywords, strings, and comments — designed for fonts like Operator Mono. In Zed,
+you can enable this on any variant via your settings:
 
 ```json
 {
@@ -69,6 +76,13 @@ The original Remedy theme for VS Code includes "Tilted" variants with italicized
 
 ## Attribution
 
-This is an unofficial port of **Remedy** by [Robert Rossmann](https://github.com/robertrossmann). All color palette choices and design decisions originate from the [original project](https://github.com/robertrossmann/vscode-remedy), which is licensed under the BSD 3-Clause License.
+This is an unofficial port of **Remedy** by
+[Robert Rossmann](https://github.com/robertrossmann). All color palette choices
+and design decisions originate from the
+[original project](https://github.com/robertrossmann/vscode-remedy),
+which is licensed under the BSD 3-Clause License.
 
-This port adapts the theme for Zed's theme format, translating TextMate scopes to Tree-sitter capture names and mapping VS Code UI color keys to Zed's style properties. Color values are sourced from the Remedy v5.28.0 VS Code extension build output.
+This port adapts the theme for Zed's theme format, translating TextMate scopes
+to Tree-sitter capture names and mapping VS Code UI color keys to Zed's style
+properties. Color values are sourced from the Remedy v5.28.0 VS Code extension
+build output.
