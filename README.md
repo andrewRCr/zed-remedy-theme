@@ -1,6 +1,9 @@
 # Remedy Theme for Zed
 
-[![Zed extension](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/andrewRCr/zed-remedy-theme/main/assets/badges/zed_extension_badge.json)](https://zed.dev/extensions/remedy-theme)
+<p align="center">
+  <a href="https://zed.dev/extensions/remedy-theme"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/andrewRCr/zed-remedy-theme/main/assets/badges/zed_extension_badge.json" alt="Zed extension"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-BSD_3--Clause-blue.svg" alt="BSD 3-Clause License"></a>
+</p>
 
 <img src="assets/screenshots/hero.webp" alt="Remedy Dark" />
 
@@ -15,7 +18,7 @@ and a cohesive UI.
 
 The blurred and transparent variants use the OS compositor: NSVisualEffectView on
 macOS, Acrylic (Win10 1809+) or Mica (Win11) on Windows. On Linux, transparency
-works across compositors; blur requires KDE (via the `kde-blur` protocol) — on
+works across compositors; blur requires KDE (via the `kde-blur` protocol). On
 GNOME and wlroots-based compositors (Hyprland, Sway, Niri), the window appears
 transparent without blur.
 
@@ -44,9 +47,13 @@ Click any thumbnail to view the full-size image.
 
 ## Italic / "Tilted" Mode
 
-The original Remedy theme for VS Code includes "Tilted" variants with italicized
-keywords, strings, and comments — designed for fonts like Operator Mono. In Zed,
-you can enable this on any variant via your settings:
+The original Remedy theme for VS Code ships "Tilted" variants that italicize
+keywords, storage types, strings, comments, and markup attributes. Zed does not
+have separate Tilted themes; you can enable the same effect on any Remedy variant
+via your settings.
+
+<details>
+<summary>Italic syntax override</summary>
 
 ```json
 {
@@ -79,14 +86,19 @@ you can enable this on any variant via your settings:
 }
 ```
 
+</details>
+
+The effect shines with fonts that include a genuine italic face such as JetBrains
+Mono, Cascadia Code Italic, Monaspace Radon, Victor Mono, MonoLisa, or Operator
+Mono. Use the default variants if your font lacks italics or you prefer upright
+syntax.
+
 ## Installation
 
 ### From the Zed Extension Marketplace
 
-1. Open Zed
-2. Open the Extensions panel (or use the command palette)
-3. Search for "Remedy"
-4. Click Install
+Install directly from [the extension page](https://zed.dev/extensions/remedy-theme),
+or search "Remedy" in Zed's Extensions panel.
 
 ### Manual / Dev Installation
 
@@ -106,3 +118,7 @@ This port adapts the theme for Zed's theme format, translating TextMate scopes
 to Tree-sitter capture names and mapping VS Code UI color keys to Zed's style
 properties. Color values are sourced from the Remedy v5.28.0 VS Code extension
 build output.
+
+---
+
+*Hero image wallpaper by [Karolis Milišauskas](https://unsplash.com/@karolismili) on Unsplash.*
