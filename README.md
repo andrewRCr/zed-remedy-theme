@@ -1,5 +1,9 @@
 # Remedy Theme for Zed
 
+[![Zed extension](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/andrewRCr/zed-remedy-theme/main/assets/badges/zed_extension_badge.json)](https://zed.dev/extensions/remedy-theme)
+
+<img src="assets/screenshots/hero.webp" alt="Remedy Dark" />
+
 A port of the [Remedy](https://github.com/robertrossmann/vscode-remedy) color scheme
 for the [Zed](https://zed.dev) editor.
 
@@ -9,18 +13,34 @@ and a cohesive UI.
 
 ## Variants
 
-| Variant                          | Description                                     |
-| -------------------------------- | ----------------------------------------------- |
-| **Remedy Dark**                  | Dark background, opaque                         |
-| **Remedy Dark (blur)**           | Dark background with frosted glass blur effect  |
-| **Remedy Dark (transparent)**    | Dark background with transparency (no blur)     |
-| **Remedy Bright**                | Light background, opaque                        |
-| **Remedy Bright (blur)**         | Light background with frosted glass blur effect |
-| **Remedy Bright (transparent)**  | Light background with transparency (no blur)    |
+The blurred and transparent variants use the OS compositor: NSVisualEffectView on
+macOS, Acrylic (Win10 1809+) or Mica (Win11) on Windows. On Linux, transparency
+works across compositors; blur requires KDE (via the `kde-blur` protocol) — on
+GNOME and wlroots-based compositors (Hyprland, Sway, Niri), the window appears
+transparent without blur.
 
-The blurred and transparent variants use the OS compositor for their effects.
-Blur works best on macOS; on Windows, the effect is applied via Acrylic
-(Win10 1809+) or Mica (Win11).
+<table>
+  <tr>
+    <th width="80"></th>
+    <th width="33%">Opaque</th>
+    <th width="33%">Blur</th>
+    <th width="33%">Transparent</th>
+  </tr>
+  <tr>
+    <th>Dark</th>
+    <td><a href="assets/screenshots/dark-opaque.webp"><img src="assets/screenshots/dark-opaque.webp" width="100%" alt="Remedy Dark"></a></td>
+    <td><a href="assets/screenshots/dark-blur.webp"><img src="assets/screenshots/dark-blur.webp" width="100%" alt="Remedy Dark (blur)"></a></td>
+    <td><a href="assets/screenshots/dark-transparent.webp"><img src="assets/screenshots/dark-transparent.webp" width="100%" alt="Remedy Dark (transparent)"></a></td>
+  </tr>
+  <tr>
+    <th>Bright</th>
+    <td><a href="assets/screenshots/bright-opaque.webp"><img src="assets/screenshots/bright-opaque.webp" width="100%" alt="Remedy Bright"></a></td>
+    <td><a href="assets/screenshots/bright-blur.webp"><img src="assets/screenshots/bright-blur.webp" width="100%" alt="Remedy Bright (blur)"></a></td>
+    <td><a href="assets/screenshots/bright-transparent.webp"><img src="assets/screenshots/bright-transparent.webp" width="100%" alt="Remedy Bright (transparent)"></a></td>
+  </tr>
+</table>
+
+Click any thumbnail to view the full-size image.
 
 ## Italic / "Tilted" Mode
 
