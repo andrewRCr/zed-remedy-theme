@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.1
+## 0.2.0
 
 - Add `Remedy Dark (adapted)`, an opaque dark variant with clearer Zed panel
   dividers and a tinted title/status bar.
