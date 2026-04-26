@@ -19,7 +19,7 @@ export function blurredOverlay(t) {
     "panel.overlay_background":  `${t.base}D7`,
     "panel.overlay_hover":       `${t.foreground}11`,
     "tab_bar.background":    "#00000000",
-    "tab.active_background": "#00000000",
+    "tab.active_background": `${t.surface}60`,
     "tab.inactive_background": "#00000000",
     "toolbar.background":    "#00000000",
 

@@ -16,7 +16,11 @@ import { darkUi } from "../src/ui-dark.mjs";
 import { brightUi } from "../src/ui-bright.mjs";
 import { blurredOverlay } from "../src/overlay-blurred.mjs";
 import { transparentOverlay } from "../src/overlay-transparent.mjs";
-import { refinedDarkChromeOverlay } from "../src/overlay-refined.mjs";
+import {
+  adaptedDarkChromeOverlay,
+  adaptedDarkBorder,
+  adaptedDarkPaneGroupBorder,
+} from "../src/overlay-adapted.mjs";
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -112,8 +116,16 @@ function applyOverlay(base, overlay) {
 // ---------------------------------------------------------------------------
 
 const darkOpaqueStyle = buildStyle(darkUi, darkSyntax, darkPlayers, terminalAnsi);
-const darkRefinedStyle = applyOverlay(darkOpaqueStyle, refinedDarkChromeOverlay);
-const darkBlurredStyle = applyOverlay(darkOpaqueStyle, blurredOverlay(dark));
+const darkAdaptedStyle = applyOverlay(darkOpaqueStyle, adaptedDarkChromeOverlay);
+
+// Dark blur/transparent inherit the adapted lighter border seed but not the
+// chrome tint — the convention across Zed blur themes is a uniform translucent
+// wash, so a warmer title/status band would read as out of place.
+const darkAdaptedTone = { ...dark, border: adaptedDarkBorder };
+const darkBlurredStyle = applyOverlay(
+  applyOverlay(darkOpaqueStyle, blurredOverlay(darkAdaptedTone)),
+  { "pane_group.border": adaptedDarkPaneGroupBorder },
+);
 const darkTransparentStyle = applyOverlay(darkBlurredStyle, transparentOverlay());
 
 const brightOpaqueStyle = buildStyle(brightUi, brightSyntax, brightPlayers, terminalAnsi);
@@ -125,8 +137,8 @@ const output = {
   name: "Remedy",
   author: "Andrew Creekmore (original theme by Robert Rossmann)",
   themes: [
-    { name: "Remedy Dark",                appearance: "dark",  style: darkOpaqueStyle },
-    { name: "Remedy Dark (refined)",      appearance: "dark",  style: darkRefinedStyle },
+    { name: "Remedy Dark",                 appearance: "dark",  style: darkOpaqueStyle },
+    { name: "Remedy Dark (adapted)",       appearance: "dark",  style: darkAdaptedStyle },
     { name: "Remedy Dark (blur)",          appearance: "dark",  style: darkBlurredStyle },
     { name: "Remedy Dark (transparent)",   appearance: "dark",  style: darkTransparentStyle },
     { name: "Remedy Bright",               appearance: "light", style: brightOpaqueStyle },

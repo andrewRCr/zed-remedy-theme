@@ -2,10 +2,13 @@
 
 ## 0.1.1
 
-- Add `Remedy Dark (refined)`, an opaque dark variant with clearer Zed panel
+- Add `Remedy Dark (adapted)`, an opaque dark variant with clearer Zed panel
   dividers and distinct title/status chrome.
+- Inherit the adapted lighter borders into `Remedy Dark (blur)` and
+  `Remedy Dark (transparent)`, since the upstream port has no blur/transparent
+  variants to stay faithful to.
 - Keep `Remedy Dark` faithful to the upstream Remedy UI colors.
-- Document the refined variant and its Zed-specific chrome adjustments.
+- Document the adapted variant and its Zed-specific chrome adjustments.
 
 ## 0.1.0
 
