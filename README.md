@@ -17,41 +17,49 @@ and a cohesive UI.
 ## Variants
 
 The default dark and bright variants prioritize fidelity to the original Remedy
-theme. `Remedy Dark (adapted)` keeps the same syntax colors and warm palette but
-adjusts Zed's panel borders and top-level chrome for clearer separation in the
-opaque UI. The blur and transparent dark variants inherit the same lighter
+theme. The adapted variants keep the same syntax palette but adjust Zed's
+chrome — `Remedy Dark (adapted)` lifts panel borders and tints the title/status
+bar for clearer separation; `Remedy Bright (adapted)` shifts the title/status
+bar to a slightly warmer band. Dark blur and transparent inherit the lighter
 border treatment.
 
-The blurred and transparent variants use the OS compositor: NSVisualEffectView on
+The blur and transparent variants use the OS compositor: NSVisualEffectView on
 macOS, Acrylic (Win10 1809+) or Mica (Win11) on Windows. On Linux, transparency
 works across compositors; blur requires KDE (via the `kde-blur` protocol). On
 GNOME and wlroots-based compositors (Hyprland, Sway, Niri), the window appears
-transparent without blur.
+transparent without blur. The `[light]` blur variants drop chrome opacity from
+~85% to ~60% for a more transparent feel.
 
 <table>
   <tr>
-    <th width="80"></th>
-    <th width="33%">Opaque</th>
-    <th width="33%">Blur</th>
-    <th width="33%">Transparent</th>
+    <th width="160"></th>
+    <th width="50%">Dark</th>
+    <th width="50%">Bright</th>
   </tr>
   <tr>
-    <th>Dark</th>
+    <th>Default</th>
     <td><a href="assets/screenshots/dark-opaque.webp"><img src="assets/screenshots/dark-opaque.webp" width="100%" alt="Remedy Dark"></a></td>
-    <td><a href="assets/screenshots/dark-blur.webp"><img src="assets/screenshots/dark-blur.webp" width="100%" alt="Remedy Dark (blur)"></a></td>
-    <td><a href="assets/screenshots/dark-transparent.webp"><img src="assets/screenshots/dark-transparent.webp" width="100%" alt="Remedy Dark (transparent)"></a></td>
-  </tr>
-  <tr>
-    <th>Dark adapted</th>
-    <td><em>Screenshot coming soon</em></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <th>Bright</th>
     <td><a href="assets/screenshots/bright-opaque.webp"><img src="assets/screenshots/bright-opaque.webp" width="100%" alt="Remedy Bright"></a></td>
-    <td><a href="assets/screenshots/bright-blur.webp"><img src="assets/screenshots/bright-blur.webp" width="100%" alt="Remedy Bright (blur)"></a></td>
-    <td><a href="assets/screenshots/bright-transparent.webp"><img src="assets/screenshots/bright-transparent.webp" width="100%" alt="Remedy Bright (transparent)"></a></td>
+  </tr>
+  <tr>
+    <th>Adapted</th>
+    <td><em>Screenshot coming soon</em></td>
+    <td><em>Screenshot coming soon</em></td>
+  </tr>
+  <tr>
+    <th>Blur</th>
+    <td><em>Screenshot coming soon</em></td>
+    <td><em>Screenshot coming soon</em></td>
+  </tr>
+  <tr>
+    <th>Blur [light]</th>
+    <td><em>Screenshot coming soon</em></td>
+    <td><em>Screenshot coming soon</em></td>
+  </tr>
+  <tr>
+    <th>Transparent</th>
+    <td><em>Screenshot coming soon</em></td>
+    <td><em>Screenshot coming soon</em></td>
   </tr>
 </table>
 

@@ -108,21 +108,38 @@ Dim colors are computed by darkening normal colors by 30%:
 Note: Terminal bright black (`#535961`) and bright white (`#EEEFEE`) differ from
 the raw palette values — these are the VS Code build output values.
 
-## Blurred & Transparent Variants
+## Blur & Transparent Variants
 
-The blurred and transparent variants use `background.appearance` set to `"blurred"` or
-`"transparent"` respectively, with fully transparent (`#00000000`) internal surfaces
-(editor, panel, terminal, tabs, toolbar, gutter) so the OS compositor effect shows through.
-Only the window-level `background` and `surface.background` carry opacity
-(~85% / `D7` and ~82% / `D0`), matching the approach used by Catppuccin Blur.
-
+The blur and transparent variants use `background.appearance` set to `"blurred"`
+or `"transparent"`, with fully transparent (`#00000000`) internal surfaces
+(editor, panel, terminal, tabs, toolbar, gutter) so the OS compositor effect
+shows through. Window-level `background`, `surface.background`, `title_bar`,
+and `status_bar` carry opacity, matching the approach used by Catppuccin Blur.
 Elevated surfaces (popups, menus) remain fully opaque for readability.
 
-## Adapted Dark Variant
+The active tab carries a subtle `surface` tint at `60` (~38% alpha) — half the
+strength used by Catppuccin Blur — so the active tab is readable without
+imposing a heavy frame on the rest of the chrome.
 
-`Remedy Dark (adapted)` keeps the upstream Remedy syntax palette and base UI
-surfaces, but adjusts a small set of Zed chrome colors for clearer panel
-separation in the opaque dark UI:
+The `[light]` variants drop chrome opacity from the standard intensity to a
+lighter wash:
+
+| Key                       | Default Blur | `[light]` Blur |
+| ------------------------- | ------------ | -------------- |
+| `background`              | `D7` (~85%)  | `99` (~60%)    |
+| `surface.background`      | `D0` (~82%)  | `8C` (~55%)    |
+| `title_bar.background`    | `D7`         | `99`           |
+| `status_bar.background`   | `D7`         | `99`           |
+| `panel.overlay_background`| `D7`         | `99`           |
+| `tab.active_background`   | `60` (~38%)  | `40` (~25%)    |
+
+## Adapted Variants
+
+The adapted variants keep the upstream Remedy syntax palette and editor
+surfaces, but adjust a small set of Zed chrome colors for clearer separation
+between top-level window chrome and panels.
+
+`Remedy Dark (adapted)` lifts panel borders and tints the title/status bar:
 
 | Key                     | Default   | Adapted   | Rationale                             |
 | ----------------------- | --------- | --------- | ------------------------------------- |
@@ -132,10 +149,21 @@ separation in the opaque dark UI:
 | `title_bar.background`  | `#352B2A` | `#463B38` | Distinguishes top-level window chrome |
 | `status_bar.background` | `#352B2A` | `#463B38` | Matches top-level chrome treatment    |
 
-The dark blur and transparent variants inherit the lighter border seed
-(`#574B39`) and the `pane_group.border` value, but not the title/status bar
-chrome tint — the prevailing convention across Zed blur themes is a uniform
-translucent wash, and a warmer chrome band reads as out of place against it.
+`Remedy Bright (adapted)` only shifts the title/status bar — bright's default
+borders (`#E4C88D`) are already plenty visible against the cream base, so the
+border treatment isn't needed:
+
+| Key                     | Default   | Adapted   | Rationale                             |
+| ----------------------- | --------- | --------- | ------------------------------------- |
+| `title_bar.background`  | `#FCEED1` | `#EBDEC3` | Distinguishes top-level window chrome |
+| `status_bar.background` | `#FCEED1` | `#EBDEC3` | Matches top-level chrome treatment    |
+
+Dark blur and transparent inherit the adapted lighter border seed (`#574B39`)
+and the `pane_group.border` value, but not the title/status bar chrome tint —
+the prevailing convention across Zed blur themes is a uniform translucent
+wash, and a warmer chrome band reads as out of place against it. Bright blur
+and transparent inherit nothing from the bright adapted variant for the same
+reason.
 
 ## Deviations from Upstream
 
@@ -147,4 +175,4 @@ Intentional departures from the VS Code Remedy v5.28.0 build output, with ration
 | `emphasis` / `emphasis.strong` | —         | `#C5C8C6`      | VS Code Remedy styles `markup.bold`/`markup.italic` via TextMate scopes that have no direct Zed equivalent. Mapped to `emphasis`/`emphasis.strong` tree-sitter captures using the same color (bright white). |
 | `strikethrough`                | —         | comments color | Not present in VS Code Remedy (Zed-specific token). Uses the variant's comments color for a de-emphasized look.                                                                                              |
 | Blurred / transparent variants | —         | see above      | Zed-only feature with no VS Code equivalent.                                                                                                                                                                 |
-| Dark adapted variant           | —         | see above      | Optional Zed UI adaptation for clearer opaque panel separation while preserving the faithful default dark variant.                                                                                            |
+| Adapted variants               | —         | see above      | Optional Zed UI adaptations for clearer opaque chrome separation while preserving the faithful default variants.                                                                                              |

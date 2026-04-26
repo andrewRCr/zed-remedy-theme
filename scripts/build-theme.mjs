@@ -18,6 +18,7 @@ import { blurredOverlay } from "../src/overlay-blurred.mjs";
 import { transparentOverlay } from "../src/overlay-transparent.mjs";
 import {
   adaptedDarkChromeOverlay,
+  adaptedBrightChromeOverlay,
   adaptedDarkBorder,
   adaptedDarkPaneGroupBorder,
 } from "../src/overlay-adapted.mjs";
@@ -112,7 +113,7 @@ function applyOverlay(base, overlay) {
 }
 
 // ---------------------------------------------------------------------------
-// Compose all 6 variants
+// Compose all variants
 // ---------------------------------------------------------------------------
 
 const darkOpaqueStyle = buildStyle(darkUi, darkSyntax, darkPlayers, terminalAnsi);
@@ -122,14 +123,22 @@ const darkAdaptedStyle = applyOverlay(darkOpaqueStyle, adaptedDarkChromeOverlay)
 // chrome tint — the convention across Zed blur themes is a uniform translucent
 // wash, so a warmer title/status band would read as out of place.
 const darkAdaptedTone = { ...dark, border: adaptedDarkBorder };
+const darkAdaptedPaneOverride = { "pane_group.border": adaptedDarkPaneGroupBorder };
+
 const darkBlurredStyle = applyOverlay(
   applyOverlay(darkOpaqueStyle, blurredOverlay(darkAdaptedTone)),
-  { "pane_group.border": adaptedDarkPaneGroupBorder },
+  darkAdaptedPaneOverride,
+);
+const darkBlurredLightStyle = applyOverlay(
+  applyOverlay(darkOpaqueStyle, blurredOverlay(darkAdaptedTone, "light")),
+  darkAdaptedPaneOverride,
 );
 const darkTransparentStyle = applyOverlay(darkBlurredStyle, transparentOverlay());
 
 const brightOpaqueStyle = buildStyle(brightUi, brightSyntax, brightPlayers, terminalAnsi);
+const brightAdaptedStyle = applyOverlay(brightOpaqueStyle, adaptedBrightChromeOverlay);
 const brightBlurredStyle = applyOverlay(brightOpaqueStyle, blurredOverlay(lit));
+const brightBlurredLightStyle = applyOverlay(brightOpaqueStyle, blurredOverlay(lit, "light"));
 const brightTransparentStyle = applyOverlay(brightBlurredStyle, transparentOverlay());
 
 const output = {
@@ -140,10 +149,13 @@ const output = {
     { name: "Remedy Dark",                 appearance: "dark",  style: darkOpaqueStyle },
     { name: "Remedy Dark (adapted)",       appearance: "dark",  style: darkAdaptedStyle },
     { name: "Remedy Dark (blur)",          appearance: "dark",  style: darkBlurredStyle },
+    { name: "Remedy Dark (blur) [light]",  appearance: "dark",  style: darkBlurredLightStyle },
     { name: "Remedy Dark (transparent)",   appearance: "dark",  style: darkTransparentStyle },
-    { name: "Remedy Bright",               appearance: "light", style: brightOpaqueStyle },
-    { name: "Remedy Bright (blur)",        appearance: "light", style: brightBlurredStyle },
-    { name: "Remedy Bright (transparent)", appearance: "light", style: brightTransparentStyle },
+    { name: "Remedy Bright",                 appearance: "light", style: brightOpaqueStyle },
+    { name: "Remedy Bright (adapted)",       appearance: "light", style: brightAdaptedStyle },
+    { name: "Remedy Bright (blur)",          appearance: "light", style: brightBlurredStyle },
+    { name: "Remedy Bright (blur) [light]",  appearance: "light", style: brightBlurredLightStyle },
+    { name: "Remedy Bright (transparent)",   appearance: "light", style: brightTransparentStyle },
   ],
 };
 
