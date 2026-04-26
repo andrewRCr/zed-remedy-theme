@@ -43,23 +43,23 @@ transparent without blur. The `[light]` blur variants drop chrome opacity from
   </tr>
   <tr>
     <th>Adapted</th>
-    <td><em>Screenshot coming soon</em></td>
-    <td><em>Screenshot coming soon</em></td>
+    <td><a href="assets/screenshots/dark-adapted.webp"><img src="assets/screenshots/dark-adapted.webp" width="100%" alt="Remedy Dark (adapted)"></a></td>
+    <td><a href="assets/screenshots/bright-adapted.webp"><img src="assets/screenshots/bright-adapted.webp" width="100%" alt="Remedy Bright (adapted)"></a></td>
   </tr>
   <tr>
     <th>Blur</th>
-    <td><em>Screenshot coming soon</em></td>
-    <td><em>Screenshot coming soon</em></td>
+    <td><a href="assets/screenshots/dark-blur.webp"><img src="assets/screenshots/dark-blur.webp" width="100%" alt="Remedy Dark (blur)"></a></td>
+    <td><a href="assets/screenshots/bright-blur.webp"><img src="assets/screenshots/bright-blur.webp" width="100%" alt="Remedy Bright (blur)"></a></td>
   </tr>
   <tr>
     <th>Blur [light]</th>
-    <td><em>Screenshot coming soon</em></td>
-    <td><em>Screenshot coming soon</em></td>
+    <td><a href="assets/screenshots/dark-blur-light.webp"><img src="assets/screenshots/dark-blur-light.webp" width="100%" alt="Remedy Dark (blur) [light]"></a></td>
+    <td><a href="assets/screenshots/bright-blur-light.webp"><img src="assets/screenshots/bright-blur-light.webp" width="100%" alt="Remedy Bright (blur) [light]"></a></td>
   </tr>
   <tr>
     <th>Transparent</th>
-    <td><em>Screenshot coming soon</em></td>
-    <td><em>Screenshot coming soon</em></td>
+    <td><a href="assets/screenshots/dark-transparent.webp"><img src="assets/screenshots/dark-transparent.webp" width="100%" alt="Remedy Dark (transparent)"></a></td>
+    <td><a href="assets/screenshots/bright-transparent.webp"><img src="assets/screenshots/bright-transparent.webp" width="100%" alt="Remedy Bright (transparent)"></a></td>
   </tr>
 </table>
 
