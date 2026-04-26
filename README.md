@@ -16,6 +16,11 @@ and a cohesive UI.
 
 ## Variants
 
+The default dark and bright variants prioritize fidelity to the original Remedy
+theme. `Remedy Dark (refined)` keeps the same syntax colors and warm palette but
+adjusts Zed's panel borders and top-level chrome for clearer separation in the
+opaque UI.
+
 The blurred and transparent variants use the OS compositor: NSVisualEffectView on
 macOS, Acrylic (Win10 1809+) or Mica (Win11) on Windows. On Linux, transparency
 works across compositors; blur requires KDE (via the `kde-blur` protocol). On
@@ -34,6 +39,12 @@ transparent without blur.
     <td><a href="assets/screenshots/dark-opaque.webp"><img src="assets/screenshots/dark-opaque.webp" width="100%" alt="Remedy Dark"></a></td>
     <td><a href="assets/screenshots/dark-blur.webp"><img src="assets/screenshots/dark-blur.webp" width="100%" alt="Remedy Dark (blur)"></a></td>
     <td><a href="assets/screenshots/dark-transparent.webp"><img src="assets/screenshots/dark-transparent.webp" width="100%" alt="Remedy Dark (transparent)"></a></td>
+  </tr>
+  <tr>
+    <th>Dark refined</th>
+    <td><em>Screenshot coming soon</em></td>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
     <th>Bright</th>

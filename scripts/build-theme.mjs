@@ -16,6 +16,7 @@ import { darkUi } from "../src/ui-dark.mjs";
 import { brightUi } from "../src/ui-bright.mjs";
 import { blurredOverlay } from "../src/overlay-blurred.mjs";
 import { transparentOverlay } from "../src/overlay-transparent.mjs";
+import { refinedDarkChromeOverlay } from "../src/overlay-refined.mjs";
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -111,6 +112,7 @@ function applyOverlay(base, overlay) {
 // ---------------------------------------------------------------------------
 
 const darkOpaqueStyle = buildStyle(darkUi, darkSyntax, darkPlayers, terminalAnsi);
+const darkRefinedStyle = applyOverlay(darkOpaqueStyle, refinedDarkChromeOverlay);
 const darkBlurredStyle = applyOverlay(darkOpaqueStyle, blurredOverlay(dark));
 const darkTransparentStyle = applyOverlay(darkBlurredStyle, transparentOverlay());
 
@@ -124,6 +126,7 @@ const output = {
   author: "Andrew Creekmore (original theme by Robert Rossmann)",
   themes: [
     { name: "Remedy Dark",                appearance: "dark",  style: darkOpaqueStyle },
+    { name: "Remedy Dark (refined)",      appearance: "dark",  style: darkRefinedStyle },
     { name: "Remedy Dark (blur)",          appearance: "dark",  style: darkBlurredStyle },
     { name: "Remedy Dark (transparent)",   appearance: "dark",  style: darkTransparentStyle },
     { name: "Remedy Bright",               appearance: "light", style: brightOpaqueStyle },

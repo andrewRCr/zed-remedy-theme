@@ -1,7 +1,7 @@
 id = "remedy-theme"
 name = "Remedy Theme"
-version = "0.1.0"
+version = "0.1.1"
 schema_version = 1
 authors = ["Andrew Creekmore <andrew.creekmore@me.com>"]
-description = "A port of the Remedy color scheme for Zed — warm and comfortable with orange accents. Includes dark and bright variants in opaque, blurred, and transparent styles."
+description = "A port of the Remedy color scheme for Zed — warm and comfortable with orange accents. Includes dark and bright variants, plus blurred, transparent, and refined dark UI styles."
 repository = "https://github.com/andrewRCr/zed-remedy-theme"

@@ -118,6 +118,20 @@ Only the window-level `background` and `surface.background` carry opacity
 
 Elevated surfaces (popups, menus) remain fully opaque for readability.
 
+## Refined Dark Variant
+
+`Remedy Dark (refined)` keeps the upstream Remedy syntax palette and base UI
+surfaces, but adjusts a small set of Zed chrome colors for clearer panel
+separation in the opaque dark UI:
+
+| Key                     | Default   | Refined   | Rationale                            |
+| ----------------------- | --------- | --------- | ------------------------------------ |
+| `border`                | `#2A2222` | `#574B39` | Warmer, more visible panel dividers  |
+| `border.variant`        | `#2A2222` | `#4D4134` | Subtler section dividers             |
+| `pane_group.border`     | —         | `#4D4134` | Explicit Zed pane-group separation   |
+| `title_bar.background`  | `#352B2A` | `#463B38` | Distinguishes top-level window chrome |
+| `status_bar.background` | `#352B2A` | `#463B38` | Matches top-level chrome treatment   |
+
 ## Deviations from Upstream
 
 Intentional departures from the VS Code Remedy v5.28.0 build output, with rationale.
@@ -128,3 +142,4 @@ Intentional departures from the VS Code Remedy v5.28.0 build output, with ration
 | `emphasis` / `emphasis.strong` | —         | `#C5C8C6`      | VS Code Remedy styles `markup.bold`/`markup.italic` via TextMate scopes that have no direct Zed equivalent. Mapped to `emphasis`/`emphasis.strong` tree-sitter captures using the same color (bright white). |
 | `strikethrough`                | —         | comments color | Not present in VS Code Remedy (Zed-specific token). Uses the variant's comments color for a de-emphasized look.                                                                                              |
 | Blurred / transparent variants | —         | see above      | Zed-only feature with no VS Code equivalent.                                                                                                                                                                 |
+| Dark refined variant           | —         | see above      | Optional Zed UI adaptation for clearer opaque panel separation while preserving the faithful default dark variant.                                                                                            |
